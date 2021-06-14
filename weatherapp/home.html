@@ -259,7 +259,23 @@ body > span {
           cDate = document.getElementById("date");
         // let weathercon =document.getElementById("weathercon");
 
-         const tempStatus = "Clouds";
+         const tempStatus = "{%weather%}";
+       const tempStatus = "{%weather%}";
+         if(tempStatus=="Sunny")
+         {
+             weathercon.innerHTML =" <i class='fas fa-sun' style='color: #eccc68'></i>";
+         }
+         else if(tempStatus=="Clouds")
+         {
+              weathercon.innerHTML = "<i class='fas fa-cloud' style='color: #d3d3d3'></i>"
+         }
+         else if(tempStatus= "Rainy")
+         {
+              weathercon.innerHTML ="<i class='fas fa-cloud-showers-heavy' style='color: #a4b0be'></i>";
+         }
+         else{
+             weathercon.innerHTML = "<i class='fas fa-cloud' style='color: #44c3de'></i>"
+         }
          const getCurday = () => {
              var weekday = new Array(7);
 weekday[0] = "Sun";
