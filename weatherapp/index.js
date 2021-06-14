@@ -6,7 +6,7 @@ var requests = require("requests");
 const homefile = fs.readFileSync("home.html" , "utf-8");
 const replaceVal = (tempval,orgval) => {
     let temperature =tempval.replace("{%tempval%}", orgval.main.temp);
-        // temperature=tempval.replace("{%weather%}",orgval.weather.main)
+        temperature=temperature.replace("{%weather%}",orgval.weather[0].main)
      temperature =temperature.replace("{%location%}", orgval.name);
      temperature =temperature.replace("{%country%}", orgval.sys.country);
      return temperature;
